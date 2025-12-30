@@ -256,7 +256,9 @@ export function StrategicFeatures() {
   })}
 </div>
 
-
+<h2 className="text-2xl md:text-3xl font-bold text-center text-[#540f6b] mb-6">
+  كل الخدمات حولك
+</h2>
 
         {/* Secondary Features Grid - Mobile First */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-12">
