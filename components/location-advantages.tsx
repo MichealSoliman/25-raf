@@ -48,7 +48,7 @@ export function LocationAdvantages() {
   }
 
   return (
-    <section className="py-24 bg-[#efedea]">
+    <section className="py-24 bg-[#d3d0ca]">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
