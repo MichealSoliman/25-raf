@@ -317,7 +317,7 @@ const defaultData: WebsiteData = {
   },
   imageCarousel: {
     title: "",
-              subtitle: "شاهد أجمل صور مشروع راف 25",
+              subtitle: "",
           images: [
             { src: "/banner.png", alt: "مشروع الزهراء السكني", title: "مشروع راف 25" },
             { src: "/banner1.png", alt: "مشروع الزهراء السكني", title: "مشروع راف 25" },
