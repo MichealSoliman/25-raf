@@ -69,7 +69,7 @@ export function CleanHero({ onBookingClick }: CleanHeroProps) {
           subtitle: "بتملك السكن المثالى",
           location: "في جدة - حي الزهراء",
           startingPrice: "870,000",
-          backgroundImage: "/banner1.png"
+          backgroundImage: "/.png"
         })
       }
     }
@@ -214,10 +214,18 @@ export function CleanHero({ onBookingClick }: CleanHeroProps) {
     <section className=" relative overflow-hidden">
       {/* Background Pattern Layer */}
       <div className="absolute inset-0 bg-[#540f6b] "></div>
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55"
-        style={{ backgroundImage: `url(${heroInfo.backgroundImage})` }}
-      ></div>
+    <div className="absolute inset-0 overflow-hidden">
+  <video
+    className="w-full h-full object-cover"
+    src="../video.mp4"// رابط الفيديو
+    autoPlay
+    loop
+    muted
+    playsInline // مهم للمتصفحات على الموبايل
+  />
+ 
+</div>
+
       {/* <div className="absolute inset-0 bg-gradient-to-br from-[#b48ad6] via-[#d1b3e0] to-[#b48ad6] opacity-90"></div> */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-[#540f6b] via-[#6d1f7b] to-[#540f6b] opacity-90"></div> */}
       {/* Navigation */}

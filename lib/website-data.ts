@@ -313,7 +313,7 @@ const defaultData: WebsiteData = {
     subtitle: "بتملك السكن المثالى",
     location: "في جدة - حي الزهراء",
     startingPrice: "870,000",
-    backgroundImage: "/banner1.png"
+    backgroundImage: "/.png"
   },
   imageCarousel: {
     title: "",
