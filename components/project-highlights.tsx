@@ -118,105 +118,140 @@ export function ProjectHighlights() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-2xl lg:text-4xl font-bold text-[#2c2c2c] mb-4">
-            <span className="font-bold text-[#540f6b]">مميزات المشروع</span>
-          </h2>
-          <p className="text-base md:text-base text-[#6b7280] max-w-3xl mx-auto">
-            مساحات تصل إلى 155 م² - موقع استثنائي قريب من الواجهة البحرية والمطار وأهم الشوارع الرئيسية
-          </p>
-        </div>
+<section className="py-16 md:py-24 bg-white relative" 
+  style={{
+    backgroundImage: "url('../banner.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* طبقة الضباب */}
+  <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+  
+  <div className="container mx-auto px-4 md:px-6 relative z-10">
+    
+    {/* Section Header */}
+    <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-2xl md:text-2xl lg:text-4xl font-bold text-[#2c2c2c] mb-4">
+        <span className="font-bold text-[#540f6b]">مميزات المشروع</span>
+      </h2>
+      <p className="text-base md:text-base text-white max-w-3xl mx-auto">
+        مساحات تصل إلى 155 م² - موقع استثنائي قريب من الواجهة البحرية والمطار وأهم الشوارع الرئيسية
+      </p>
+    </div>
 
-        <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-12">
-          {highlights.map((highlight, index) => {
-            const IconComponent = iconMap[highlight.icon]
-            return (
-            <div
-              key={index}
-              className="flex items-center justify-start gap-3 md:gap-4 bg-[#f5f3f0] rounded-2xl py-4 md:py-6 md:px-4"
-            >
-              <div className="flex-shrink-0 flex items-center justify-center bg-white rounded-full w-12 md:w-16 h-12 md:h-16 border border-[#e5e1dc] mx-2">
-                {IconComponent && <IconComponent className="w-6 md:w-8 h-6 md:h-8  text-[#540f6b]" />}  
-              </div>
-              <h3 className="font-bold text-sm md:text-lg lg:text-xl text-[#2c2c2c] leading-tight">
-                {highlight.title}
-              </h3>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
+      {highlights.map((highlight, index) => {
+        const IconComponent = iconMap[highlight.icon]
+        return (
+          <div
+            key={index}
+            className="relative flex flex-col items-center justify-center gap-3 rounded-xl py-6 px-4 border border-white/30 min-h-[140px] overflow-hidden group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            style={{
+              isolation: 'isolate',
+            }}
+          >
+            {/* أوفرلاي الخلفية */}
+            <div className="absolute inset-0 bg-white/20 group-hover:bg-[#1c1610]/80 transition-all duration-300"></div>
+            
+            {/* الأيقونة */}
+            <div className="relative z-10 flex-shrink-0 flex items-center justify-center bg-white/80 rounded-xl w-14 h-14 md:w-16 md:h-16 mb-3 group-hover:bg-white/90 group-hover:shadow-lg transition-all duration-300">
+              {IconComponent && <IconComponent className="w-7 md:w-8 h-7 md:h-8 text-[#540f6b] group-hover:scale-110 transition-transform duration-300" />}  
             </div>
-          )})}
-        </div>
+            
+            {/* النص */}
+            <h3 className="relative z-10 font-bold text-sm md:text-base text-center text-white leading-tight group-hover:text-white/95 transition-all duration-300">
+              {highlight.title}
+            </h3>
+          </div>
+        )})}
+    </div>
 
-        {/* Guarantees Section */}
-        <div className="mt-16 md:mt-20">
-          <div className="text-center mb-12 md:mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2c2c2c]">
-               <div className="flex items-center space-x-2 space-x-reverse">
-                <Award className="w-5 h-5 text-[#540f6b]" />
-                
-                <span className="font-bold text-[#540f6b] text-lg">
-                  15
-                </span>
+    {/* Guarantees Section */}
+    <div className="mt-16 md:mt-20">
+      <div className="text-center mb-12 md:mb-16">
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2c2c2c]">
+           <div className="flex items-center space-x-2 space-x-reverse">
+            <Award className="w-5 h-5 text-[#540f6b]" />
+            
+            <span className="font-bold text-[#540f6b] text-lg">
+              15
+            </span>
 
-                <span className="text-[#2c2c2c] font-medium ">
-                  سنة خبرة
-                </span>
-              </div>
-
-              </h2>
-      
-            </div>
-            <p className="text-lg md:text-xl text-[#6b7280] max-w-3xl mx-auto">
-              نلتزم بأعلى معايير الجودة ونقدم ضمانات شاملة لراحة بالك وثقتك
-            </p>
+            <span className="text-white font-medium m-1 ">
+              سنة خبرة
+            </span>
           </div>
 
-          {/* Guarantees */}
-          {validGuarantees.length > 0 ? (
-            <div className="bg-[#f5f3f0] rounded-2xl p-6 md:p-4 border border-[#e5e1dc]">
-              <div className="grid grid-cols-2 gap-4 md:gap-6">
-                {validGuarantees.map((guarantee, index) => {
-                  const IconComponent = iconMap[guarantee.icon] || Shield
-                  return (
-                    <div key={index} className="flex items-center gap-2 md:gap-3">
-                      <div className="flex-shrink-0 flex items-center justify-center bg-white rounded-full w-8 md:w-10 h-8 md:h-10 border border-[#e5e1dc]">
-                        {IconComponent && <IconComponent className="w-4 md:w-5 h-4 md:h-5 text-[#540f6b]" />}
-                      </div>
-       
-                      <span className="text-[#2c2c2c] text-sm md:text-base font-medium">{guarantee.title} {guarantee.subtitle}</span>
-                    </div>
-                  )
-                })}
-              </div>
-          
-            </div>
-          ) : (
-            <div className="bg-[#f5f3f0] rounded-2xl p-6 md:p-4 border border-[#e5e1dc] text-center">
-              <p className="text-[#6b7280] text-sm">لا توجد ضمانات متاحة حالياً</p>
-                     </div>
-          )}
+          </h2>
+      
         </div>
-
-        {/* Booking Button */}
-        <div className="mt-16 md:mt-20 text-center ">
-          <Button
-            onClick={() => {
-              const formElement = document.getElementById('booking-form')
-              if (formElement) {
-                formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            }}
-            className="bg-[#540f6b] hover:bg-[#540f6b] text-white  px-8 py-6 rounded-[18px] text-lg font-bold transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
-          >
-            احجز وتملك الآن شقة العمر
-          </Button>
-        </div>
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
+          نلتزم بأعلى معايير الجودة ونقدم ضمانات شاملة لراحة بالك وثقتك
+        </p>
       </div>
 
-      {/* Booking Modal */}
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </section>
+      {/* Guarantees */}
+      {validGuarantees.length > 0 ? (
+        <div className="relative rounded-xl p-8 border border-white/30 overflow-hidden group transform transition-all duration-300 hover:shadow-xl"
+          style={{
+            isolation: 'isolate',
+          }}
+        >
+          {/* أوفرلاي الخلفية */}
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] group-hover:bg-[#1c1610]/75 transition-all duration-300"></div>
+          
+          <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {validGuarantees.map((guarantee, index) => {
+              const IconComponent = iconMap[guarantee.icon] || Shield
+              return (
+                <div key={index} className="flex flex-col items-center justify-center gap-2 text-center transform transition-all duration-300 hover:scale-105">
+                  {/* الأيقونة */}
+                  <div className="flex-shrink-0 flex items-center justify-center bg-white/80 rounded-xl w-12 h-12 md:w-14 md:h-14 mb-2 group-hover:bg-white/90 group-hover:shadow-lg transition-all duration-300">
+                    {IconComponent && <IconComponent className="w-5 md:w-6 h-5 md:h-6 text-[#540f6b] group-hover:scale-110 transition-transform duration-300" />}
+                  </div>
+                  
+                  {/* النص */}
+                  <span className="text-white text-sm md:text-base font-medium group-hover:text-white/95 transition-all duration-300">
+                    {guarantee.title} {guarantee.subtitle}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      ) : (
+        <div className="relative rounded-xl p-8 border border-white/30 text-center overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+          style={{
+            isolation: 'isolate',
+          }}
+        >
+          {/* أوفرلاي الخلفية */}
+          <div className="absolute inset-0 bg-[#1c1610]/70 backdrop-blur-[3px] hover:bg-[#1c1610]/75 transition-all duration-300"></div>
+          <p className="relative z-10 text-white text-sm hover:text-white/95 transition-all duration-300">لا توجد ضمانات متاحة حالياً</p>
+        </div>
+      )}
+    </div>
+
+    {/* Booking Button */}
+    <div className="mt-16 md:mt-20 text-center">
+      <Button
+        onClick={() => {
+          const formElement = document.getElementById('booking-form')
+          if (formElement) {
+            formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }}
+        className="bg-[#540f6b] hover:bg-[#540f6b] text-white px-8 py-6 rounded-[18px] text-lg font-bold transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+      >
+        احجز وتملك الآن شقة العمر
+      </Button>
+    </div>
+  </div>
+
+  {/* Booking Modal */}
+  <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+</section>
   )
 }
