@@ -232,7 +232,7 @@ export function CleanHero({ onBookingClick }: CleanHeroProps) {
       <nav className="border-b border-white/20 relative z-10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="  text-xl font-bold text-white backdrop-blur-sm bg-[#681c78] px-4 py-2 rounded-lg">
+            <div className="  text-xl font-bold text-white mx-auto backdrop-blur-sm bg-[#681c78] px-4 py-2 rounded-lg">
             <img src="../logo.png"  alt="" className="w-16" />
             </div>
           </div>
@@ -240,12 +240,12 @@ export function CleanHero({ onBookingClick }: CleanHeroProps) {
       </nav>
 
       {/* Hero Content */}
-      <div className="container mx-auto px-6 py-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="container mx-auto px-6 relative z-10 py-16">
+        <div className="max-w-2xl mx-auto ">
           {/* Content Side */}
-          <div className="space-y-12">
-            <div className="space-y-8">
-              <div className="space-y-4 backdrop-blur-md bg-white/10 p-8 rounded-2xl border border-white/20">
+          <div className="space-y-12  ">
+            <div className="space-y-8 ">
+              <div className="space-y-4  backdrop-blur-md  bg-white/10 p-8 rounded-2xl border border-white/20">
                 <h1 className="text-2xl lg:text-4xl font-light text-white leading-tight flex flex-col space-y-2">
                   <span className="font-bold"> مشروع راف 25 </span>
                   <span className="text-white font-bold">{heroInfo.subtitle}</span>
@@ -253,7 +253,7 @@ export function CleanHero({ onBookingClick }: CleanHeroProps) {
                   
                      {/* السعر في الوسط للشاشات الصغيرة، وعلى اليمين للشاشات الكبيرة */}
                 <div className="flex items-center space-x-2 space-x-reverse justify-center lg:justify-start">
-                  <span className="text-xl text-white/90 font-light">أسعار تبدأ من </span>
+                  <span className="text-sm text-white/90 font-light">أسعار تبدأ من </span>
                   <span className="text-4xl font-bold text-white text-center lg:text-right">{heroInfo.startingPrice}</span>
                   <span className="text-2xl text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="200 200 600 600" width="32" height="32">
@@ -309,10 +309,7 @@ export function CleanHero({ onBookingClick }: CleanHeroProps) {
         <div className="max-w-2xl mx-auto ">
           <div className="backdrop-blur-md bg-white/10 rounded-2xl shadow-2xl border border-white/20 overflow-hidden">
             {/* Form Header */}
-            <div className=" font-bold text-xl  p-6 text-center ">
-
-              <p className="text-white/90">املأ البيانات أدناه وسنتواصل معك خلال 24 ساعة</p>
-            </div>
+   
 
             {/* Form Content */}
             <form 
